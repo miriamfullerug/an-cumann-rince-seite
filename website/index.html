@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ga">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cumann Rince Seite</title>
+  </head>
+
+  <body>
+    <main>
+      <section id="content">
+        <!-- Markdown content will load here -->
+      </section>
+
+      <nav>
+        <a href="/sets/">Na Seit</a>
+      </nav>
+
+      <section id="intro">
+        <img
+          src="/public/images/crs-coiste25.jpg"
+          alt="Cumann Rince Seite, Ollscoil na Gaillimhe"
+          style="max-width: 100%; height: auto"
+        />
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script>
+      fetch("home.md?v=" + Date.now())
+        .then((res) => res.text())
+        .then((md) => {
+          document.getElementById("content").innerHTML = marked.parse(md);
+        });
+    </script>
+  </body>
+</html>

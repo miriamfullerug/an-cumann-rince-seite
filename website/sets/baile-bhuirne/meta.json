@@ -1,4 +1,13 @@
 {
-    "video": "",
-    "county": "Corcaigh"
+  "title": "Baile Bhuirne",
+  "county": "Corcaigh",
+  "videoEmbed": "https://www.youtube.com/embed/jc3WDwhQAo4",
+  "figures": [
+    { "number": 1, "name": "Luascadh do pháirtí", "tune": "sleamhnáin", "bars": 88 },
+    { "number": 2, "name": "Luascadh leis an duine trasna uait", "tune": "sleamhnáin", "bars": 104 },
+    { "number": 3, "name": "Nollaig", "tune": "sleamhnáin", "bars": 104, "repeats": 2 },
+    { "number": 4, "name": "Luascadh le gach bean", "tune": "sleamhnáin", "bars": 136 },
+    { "number": 5, "name": "Cúl-slabhra", "tune": "sleamhnáin", "bars": 112 }
+  ],
+  "totalBars": 544
 }

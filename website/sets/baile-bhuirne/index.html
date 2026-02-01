@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ga">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Seit Bhaile Bhuirne</title>
+</head>
+
+<body>
+  <nav>
+    <a href="/">Baile</a> • <a href="/sets/">Na Seit</a>
+  </nav>
+
+  <main>
+    <section id="treoracha">
+      <!-- Markdown content injected here -->
+    </section>
+  </main>
+
+  <!-- Markdown renderer -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <script>
+    Promise.all([
+      fetch('index.md?v=' + Date.now()).then(r => r.text()),
+      fetch('meta.json?v=' + Date.now()).then(r => r.json())
+    ]).then(([md, meta]) => {
+      const container = document.getElementById('treoracha');
+      container.innerHTML = marked.parse(md);
+
+      if (meta.videoEmbed) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'video-wrapper';
+
+        const iframe = document.createElement('iframe');
+        iframe.src = meta.videoEmbed;
+        iframe.title = meta.title || '';
+        iframe.allowFullscreen = true;
+
+        wrapper.appendChild(iframe);
+
+        const h1 = container.querySelector('h1');
+        if (h1) h1.after(wrapper);
+      }
+    });
+  </script>
+</body>
+</html>
+
+
