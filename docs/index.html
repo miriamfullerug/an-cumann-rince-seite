@@ -8,31 +8,47 @@
 
   <body>
     <main>
-      <section id="content">
-        <!-- Markdown content will load here -->
-      </section>
-
+      <!-- Navigation -->
       <nav>
         <a href="./sets/">Na Seit</a>
       </nav>
 
+      <!-- Intro image -->
       <section id="intro">
         <img
           src="public/images/crs-coiste25.jpg"
           alt="Cumann Rince Seite, Ollscoil na Gaillimhe"
-          style="max-width: 100%; height: auto"
+          style="max-width: 100%; height: auto;"
         />
+      </section>
+
+      <!-- Markdown content -->
+      <section id="content">
+        <!-- Markdown content will load here -->
       </section>
     </main>
 
+    <!-- Markdown renderer -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
+    <!-- Load homepage content -->
     <script>
       fetch("home.md?v=" + Date.now())
-        .then((res) => res.text())
-        .then((md) => {
+        .then(res => {
+          if (!res.ok) {
+            throw new Error("Níor aimsíodh home.md");
+          }
+          return res.text();
+        })
+        .then(md => {
           document.getElementById("content").innerHTML = marked.parse(md);
+        })
+        .catch(err => {
+          document.getElementById("content").innerHTML =
+            "<p><strong>Earráid:</strong> " + err.message + "</p>";
+          console.error(err);
         });
     </script>
   </body>
 </html>
+
