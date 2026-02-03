@@ -1,0 +1,13 @@
+<nav class="navbar {% if navClass %}{{ navClass }}{% endif %}">
+  <div class="nav-left">
+    {% if navClass == "navbar-content" %}
+    <a href="/">
+      <img src="/images/logo.png" alt="{{ site.title }}" class="logo">
+    </a>
+    {% else %}
+    <img src="/images/logo.png" alt="{{ site.title }}" class="logo">
+    {% endif %}
+    <a href="/sets/">Seiteanna</a>
+    <a href="/about/">Fúinn</a>
+  </div>
+</nav>

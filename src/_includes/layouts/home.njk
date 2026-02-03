@@ -3,22 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cumann Rince Seite</title>
+  <title>{{ site.title }}</title>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
   <main>
     <section id="home-hero">
-      <nav class="navbar ">
-  <div class="nav-left">
-    
-    <img src="/images/logo.png" alt="Cumann Rince Seite" class="logo">
-    
-    <a href="/sets/">Seiteanna</a>
-    <a href="/about/">Fúinn</a>
-  </div>
-</nav>
-
+      {% include "partials/nav.njk" %}
       <div class="hero-title">
         <span>An Cumann</span>
         <span>Rince Seite</span>
