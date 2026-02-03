@@ -16,14 +16,46 @@ navClass: navbar-content
     <section class="content-section">
       <h1>{{ title }}</h1>
 
-      <ul class="sets-list">
+      <div class="search-container">
+        <input type="text" id="set-search" class="search-input" placeholder="Cuardaigh seit (teideal nó contae)...">
+      </div>
+
+      <ul class="sets-list" id="sets-list">
         {% for set in collections.sets %}
-        <li>
-          <a href="{{ set.url }}">{{ set.data.title }}</a>
+        <li data-title="{{ set.data.title | lower }}" data-county="{{ set.data.county | lower }}">
+          <a href="{{ set.url }}">{{ set.data.title }} <span class="set-county">({{ set.data.county }})</span></a>
         </li>
         {% endfor %}
       </ul>
+      <p class="no-results" id="no-results" style="display: none;">Níl aon seit faighte.</p>
     </section>
+
+    <script>
+      (function() {
+        const searchInput = document.getElementById('set-search');
+        const setsList = document.getElementById('sets-list');
+        const noResults = document.getElementById('no-results');
+        const setItems = Array.from(setsList.querySelectorAll('li'));
+
+        function filterSets() {
+          const query = searchInput.value.toLowerCase().trim();
+          let visibleCount = 0;
+
+          setItems.forEach(item => {
+            const title = item.getAttribute('data-title');
+            const county = item.getAttribute('data-county');
+            const matches = !query || title.includes(query) || county.includes(query);
+            
+            item.style.display = matches ? '' : 'none';
+            if (matches) visibleCount++;
+          });
+
+          noResults.style.display = visibleCount === 0 && query ? 'block' : 'none';
+        }
+
+        searchInput.addEventListener('input', filterSets);
+      })();
+    </script>
   </main>
 </body>
 </html>

@@ -24,34 +24,66 @@
     <section class="content-section">
       <h1>Na Seit</h1>
 
-      <ul class="sets-list">
+      <div class="search-container">
+        <input type="text" id="set-search" class="search-input" placeholder="Cuardaigh seit (teideal nó contae)...">
+      </div>
+
+      <ul class="sets-list" id="sets-list">
         
-        <li>
-          <a href="/sets/baile-bhuirne/">Baile Bhuirne</a>
+        <li data-title="baile bhuirne" data-county="corcaigh">
+          <a href="/sets/baile-bhuirne/">Baile Bhuirne <span class="set-county">(Corcaigh)</span></a>
         </li>
         
-        <li>
-          <a href="/sets/clare-lancers/">Clare Lancers</a>
+        <li data-title="clare lancers" data-county="an clár">
+          <a href="/sets/clare-lancers/">Clare Lancers <span class="set-county">(An Clár)</span></a>
         </li>
         
-        <li>
-          <a href="/sets/caledonian/">Caledonian</a>
+        <li data-title="caledonian" data-county="an clár">
+          <a href="/sets/caledonian/">Caledonian <span class="set-county">(An Clár)</span></a>
         </li>
         
-        <li>
-          <a href="/sets/connemara/">Connemara</a>
+        <li data-title="connemara" data-county="gaillimh">
+          <a href="/sets/connemara/">Connemara <span class="set-county">(Gaillimh)</span></a>
         </li>
         
-        <li>
-          <a href="/sets/cashel/">Cashel</a>
+        <li data-title="cashel" data-county="tiobraid árann">
+          <a href="/sets/cashel/">Cashel <span class="set-county">(Tiobraid Árann)</span></a>
         </li>
         
-        <li>
-          <a href="/sets/clare-plain/">Clare Plain</a>
+        <li data-title="clare plain" data-county="an clár">
+          <a href="/sets/clare-plain/">Clare Plain <span class="set-county">(An Clár)</span></a>
         </li>
         
       </ul>
+      <p class="no-results" id="no-results" style="display: none;">Níl aon seit faighte.</p>
     </section>
+
+    <script>
+      (function() {
+        const searchInput = document.getElementById('set-search');
+        const setsList = document.getElementById('sets-list');
+        const noResults = document.getElementById('no-results');
+        const setItems = Array.from(setsList.querySelectorAll('li'));
+
+        function filterSets() {
+          const query = searchInput.value.toLowerCase().trim();
+          let visibleCount = 0;
+
+          setItems.forEach(item => {
+            const title = item.getAttribute('data-title');
+            const county = item.getAttribute('data-county');
+            const matches = !query || title.includes(query) || county.includes(query);
+            
+            item.style.display = matches ? '' : 'none';
+            if (matches) visibleCount++;
+          });
+
+          noResults.style.display = visibleCount === 0 && query ? 'block' : 'none';
+        }
+
+        searchInput.addEventListener('input', filterSets);
+      })();
+    </script>
   </main>
 </body>
 </html>
