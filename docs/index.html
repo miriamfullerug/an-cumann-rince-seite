@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="ga">
   <head>
+    <link rel="stylesheet" href="./public/css/styles.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Cumann Rince Seite</title>
@@ -8,48 +9,25 @@
 
   <body>
     <main>
-      <!-- Navigation -->
-      <nav>
-        <a href="./sets/">Na Seit</a>
-      </nav>
+      <section id="home-hero">
+        <!-- Navigation -->
+        <nav class="navbar">
+          <div class="nav-left">
+            <img
+              src="./public/images/logo.png"
+              alt="Cumann Rince Seite"
+              class="logo"
+            />
+            <a href="./sets/">Seiteanna</a>
+            <a href="./about/">Fúinn</a>
+          </div>
+        </nav>
 
-      <!-- Markdown content -->
-      <section id="content">
-        <!-- Markdown content will load here -->
+        <div class="hero-title">
+          <span>An Cumann</span>
+          <span>Rince Seite</span>
+        </div>
       </section>
-
-      <!-- Intro image -->
-      <section id="intro">
-        <img
-          src="./public/images/crs-coiste25.jpg"
-          alt="Cumann Rince Seite, Ollscoil na Gaillimhe"
-          style="max-width: 100%; height: auto;"
-        />
-      </section>
-      
     </main>
-
-    <!-- Markdown renderer -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
-    <!-- Load homepage content -->
-    <script>
-      fetch("home.md?v=" + Date.now())
-        .then(res => {
-          if (!res.ok) {
-            throw new Error("Níor aimsíodh home.md");
-          }
-          return res.text();
-        })
-        .then(md => {
-          document.getElementById("content").innerHTML = marked.parse(md);
-        })
-        .catch(err => {
-          document.getElementById("content").innerHTML =
-            "<p><strong>Earráid:</strong> " + err.message + "</p>";
-          console.error(err);
-        });
-    </script>
   </body>
 </html>
-

@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "Bungc";
+  src: url("../fonts/bungc.woff2") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Bungc", serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#home-hero {
+  min-height: 100vh; /* full viewport height */
+  background-image: url("../images/hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 2rem;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo {
+  height: 56px;
+  width: auto;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.hero-title {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  color: white;
+
+  text-align: right;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.hero-title span {
+  display: block;
+}
+
+.hero-title span:first-child {
+  font-size: clamp(3.8rem, 7vw, 6rem);
+}
+
+.hero-title span:last-child {
+  font-size: clamp(4.8rem, 9vw, 7.5rem);
+}
+
+
