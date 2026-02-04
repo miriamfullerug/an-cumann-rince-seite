@@ -1,101 +1,212 @@
 ---
-title: "Clare Lancers"
+title: "Lansaithe an Chláir"
 county: "An Clár"
-totalBars: 880
 ---
 
-Ceann de na seiteanna is coitianta in Éirinn. Ba chóir é a rince go héadrom, gan léim ná bualadh cos.
+*Dáltar uimhreacha na gcúplaí mar a dhéanfaí an chrois*  
+**Bogann cúplaí isteach sa líne ar dheis idir na cúplaí uachtaracha agus íochtaracha.**
 
 ---
 
-**Figiúr 1 – The Square**
+**Figiúr 1 – An Chearnóg**
 *ríleanna – 160 barra*
 
 **Gach duine**
-- Lead around i ngreim lámha trasnaithe
-- Luascadh
+- Siúil timpeall
+- Luascadh (greim bhálsa)
 
-**Barranna**
-- Pass-by agus luascadh leis na barranna eile
-- Luascadh na gcúinní
+**Barranna** *(fear 1 agus bean 2)*
+- Siúil thar a chéile agus luascadh (4 barra)
 
-**Taobhanna**
-- Pass-by agus luascadh leis na taobhanna eile
-- Luascadh na gcúinní
+**An Chearnóg**
+- Cúplaí rince tríd a chéile, mná sa lár, gualainn dheas le gualainn dheas
+- Páirtithe siúil thar a chéile, gualainn chlé le gualainn chlé
+- Cúplaí rince tríd a chéile, gualainn dheas le gualainn dheas
+- Páirtithe siúil thar a chéile, gualainn chlé le gualainn chlé
+- Taobhanna rince an dá bharra dheireanacha sa bhaile
 
 **Gach duine**
-- House around le dúbailt ar na barraí deireanacha
+- Luascadh sa chúinne, gach fear leis an mbean ar a chlé
+- Luascadh aige baile
+
+**Barranna** *(fear 2 agus bean 1)*
+- Siúil thar a chéile agus luascadh
+
+**An Chearnóg**
+- Mar thuas
+
+**Gach duine**
+- Luascadh sa chúinne
+- Luascadh aige baile
+
+**Taobhanna** *(fear 1 agus bean 2)*
+- Siúil thar a chéile agus luascadh
+
+**An Chearnóg**
+- Mar thuas
+
+**Gach duine**
+- Luascadh sa chúinne
+- Luascadh aige baile
+
+**Taobhanna** *(fear 2 agus bean 1)*
+- Siúil thar a chéile agus luascadh
+
+**An Chearnóg**
+- Mar thuas
+
+**Gach duine**
+- Luascadh sa chúinne
+- Luascadh aige baile
+- Timpeall an tí *(dúbailt don leath deirneach)*
 
 ---
 
-**Figiúr 2 – Turn the Lady**
+**Figiúr 2 – Cas an Bhean**
 *ríleanna – 192 barra*
 
 **Gach duine**
-- Lead around
+- Siúil timpeall
 - Luascadh
 
-**Barranna**
-- House within
-- An fear ag rince in áit, ag casadh a pháirtí 4 huaire faoin lámh dheas
+**Barranna** *(cúpla 1)*
+- Timpeall an tí istigh
+- Cas an bhean (4 bhabhta aige baile)
+- Tarraing agus brú
+- Isteach ‘s amach x2 *(tarna babhta taobhanna fan aige baile)*
+- Luascadh
 
-**Taobhanna**
-- House within
-- An fear ag rince in áit, ag casadh a pháirtí 4 huaire
+**Barranna** *(cúpla 2)*
+- Timpeall an tí istigh
+- Cas an bhean
+- Tarraing agus brú
+- Isteach ‘s amach x2
+- Luascadh
+
+**Taobhanna** *(cúpla 1)*
+- Timpeall an tí istigh
+- Cas an bhean
+- Tarraing agus brú
+- Isteach ‘s amach x2
+- Luascadh
+
+**Taobhanna** *(cúpla 2)*
+- Timpeall an tí istigh
+- Cas an bhean
+- Tarraing agus brú
+- Isteach ‘s amach x2
+- Luascadh
 
 **Gach duine**
-- Pass-by agus advance/retire i línte
+- Timpeall an tí *(dúbailt don leath deirneach)*
 
 ---
 
-**Figiúr 3 – Face to Face**
+**Figiúr 3 – Éadan ar Éadan**
 *ríleanna – 144 barra*
 
-**Mná**
-- Advance agus retire le umhlú
-
-**Fir**
-- Advance agus retire le umhlú
-
 **Gach duine**
-- Lámha a ghlacadh sa lár
-- Wheel le greim timpeall an choim
-- Swing eight – luascadh deiseal agus léim chun cosa a athrú
-
-**Gach duine**
-- House around
+- Siúil timpeall
+- Luascadh
+- Mná chun tosaigh agus thar n-ais x2 *(crom cloiginn an dara huair)*
+- Fir chun tosaigh agus thar n-ais x2 *(crom cloiginn an dara huair)*, glac lámha clé sa lár
+- Rothlú iomlán x2  
+  *(Siúil timpeall leis na mná go tuathalach slí ar fad abhaile; cas i dtreo do bhean agus téigh an treo eile)*
+- Nollaig mhór x2  
+  *(8 mbarra i dtreo amháin agus 8 mbarra an treo eile)*
+- Luascadh
+- Mná isteach ‘s amach
+- Fir chun tosaigh agus thar n-ais; glac lámha
+- Roth timpeall agus thar n-ais
+- Nollaig mhór
+- Luascadh
+- Timpeall an tí *(dúbailt don leath deirneach)*
 
 ---
 
-**Figiúr 4 – Wheel and Swing**
+**Figiúr 4 – Roth agus Luascadh**
 *ríleanna – 192 barra*
 
+**Gach duine**
+- Siúil timpeall
+- Luascadh
+
+**Cúpla 1**
+- Timpeall an tí istigh
+
 **Barranna**
-- House within
-- Lead around
+- Siúil timpeall ciorcail ‘s ceathrú (5/4) *(mná sa lár)*
+- Roth deas agus clé *(leis an gcúpla ar na taobhanna)*
+- Nollaig bheag *(7 mbarra)* agus abhaile ar bharra 8
+- Luascadh
+
+**Cúpla 2**
+- Timpeall an tí istigh
+
+**Barranna**
+- Siúil timpeall *(fearbh sa lár)*
+- Roth deas agus clé
+- Nollaig bheag
+- Luascadh
 
 **Taobhanna**
-- House within
-- Lead around
+- Déan uimhir 2
+- Roth deas agus clé *(mná sa lár)*
+- Nollaig bheag
+- Luascadh
+
+**Taobhanna**
+- Déan uimhir 6
+- Roth deas agus clé *(fearbh sa lár)*
+- Nollaig bheag
+- Luascadh
 
 **Gach duine**
-- Wheel ar dheis agus ar chlé (4 bharra gach treo)
-- Swing four
+- Timpeall an tí *(dúbailt don leath deirneach)*
 
 ---
 
-**Figiúr 5 – The Line**
+**Figiúr 5 – An Líne**
 *ríleanna – 192 barra*
 
 **Gach duine**
-- Chain and line-up – línte singile le fir taobh thiar de mhná
-- Slide ar chlé agus ar dheis – línte ag dul trí chéile
+- Siúil timpeall
+- Luascadh
+- Slabhra leath-slí timpeall; luascadh amháin; agus slabhra leath-slí abhaile
 
-**Barranna**
-- Athdhéan taobh thiar de na 2ú barranna
-
-**Taobhanna**
-- Athdhéan taobh thiar de na 1ú agus 2ú taobhanna
+**An Líne**
+- Bean chun tosaigh, san ord 1, 3, 4, 2 *(ag féachaint i dtreo 1)*
+- Sleamhnaigh ar chlé agus ar dheis *(fearbh ar chlé ar dtús i gcónaí)*
+- *(Ag féachaint isteach sa seit)* Isteach ‘s amach
+- Rince thar n-ais abhaile *(ceithre bharra)* agus luascadh *(ceithre bharra)*
 
 **Gach duine**
-- House around
+- Slabhra
+
+**An Líne**
+- Féachaint i dtreo áit cúpla 2
+- Sleamhnaigh ar chlé agus ar dheis
+- Isteach ‘s amach
+- Rince thar n-ais abhaile agus luascadh
+
+**Gach duine**
+- Slabhra
+
+**An Líne**
+- Féachaint i dtreo áit cúpla 3
+- Sleamhnaigh ar chlé agus ar dheis
+- Chun tosaigh agus thar n-ais
+- Rince thar n-ais abhaile agus luascadh
+
+**Gach duine**
+- Slabhra
+
+**An Líne**
+- Féachaint i dtreo áit cúpla 4
+- Sleamhnaigh ar chlé agus ar dheis
+- Isteach ‘s amach
+- Rince thar n-ais abhaile agus luascadh
+
+**Gach duine**
+- Timpeall an tí *(dúbailt don leath deirneach)*
+

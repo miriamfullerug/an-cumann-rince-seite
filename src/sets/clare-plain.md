@@ -1,123 +1,202 @@
 ---
-title: "Clare Plain"
+title: "Pléineáilte an Chláir"
 county: "An Clár"
-totalBars: 1024
 ---
 
-Seit traidisiúnta ó Chontae an Chláir. Tá sé ar cheann de na seiteanna is fearr le foghlaim do thosaitheoirí.
-
----
-
-**Figiúr 1 – Pass Through**
+**Figiúr 1 – Siúil tríd**
 *ríleanna – 112 barra*
 
 **Gach duine**
-- Lead around le greim lámha trasnaithe
-- Rince sa bhaile, ag casadh faoi dhó
+- Siúil timpeall
+- Rince sa bhaile (cas faoi dhó)
 
 **Barranna**
-- Pass through le malartuithe lámh
+- Siúil tríd (mná sa lár)
+- Cas an bhean
+- Siúil tríd (mná sa lár)
+- Cas an bhean
 - Rince sa bhaile
-- Ladies chain le casadh
-- Leath lead around agus pas ar ais
-
-**Taobhanna**
-- Athdhéan
+- Slabhra na mBan
+- Cas an bhean
+- Siúil timpeall leath-slí, cas do bhean, siúil tríd abhaile (mná sa lár)
 
 **Gach duine**
-- Rince sa bhaile agus house around
+- Rince sa bhaile
+
+**Taobhanna**
+- Siúil tríd (mná sa lár)
+- Cas an bhean
+- Siúil tríd (mná sa lár)
+- Cas an bhean
+- Rince sa bhaile
+- Slabhra na mBan
+- Cas an bhean
+- Siúil timpeall leath-slí, cas do bhean, siúil tríd abhaile (mná sa lár)
+
+**Gach duine**
+- Rince sa bhaile
+- Timpeall an tí
 
 ---
 
-**Figiúr 2 – Turn the Ladies**
+**Figiúr 2 – Cas an bhean trasna**
 *ríleanna – 128 barra*
 
 **Gach duine**
-- Lead around agus rince sa bhaile
+- Siúil timpeall
+- Rince sa bhaile
 
 **Barranna**
-- Advance, retire, agus cas trasna
-- Rince sa bhaile
-- Advance, retire agus cas trasna arís
-
-**Taobhanna**
-- Athdhéan
+- Chun tosaigh agus cúlaigh
+- Trasnaigh agus cas (casadh go leith)
+- Chun tosaigh agus cúlaigh
+- Trasnaigh agus cas
+- Rince sa bhaile  
+- Déan x2
 
 **Gach duine**
-- Rince sa bhaile agus house around
+- Rince sa bhaile
+
+**Taobhanna**
+- Chun tosaigh agus cúlaigh
+- Trasnaigh agus cas (casadh go leith)
+- Chun tosaigh agus cúlaigh
+- Trasnaigh agus cas
+- Rince sa bhaile  
+- Déan x2
+
+**Gach duine**
+- Rince sa bhaile
+- Timpeall an tí
 
 ---
 
-**Figiúr 3 – Chase the Ladies**
+**Figiúr 3 – Lean an Bhean**
 *ríleanna – 176 barra*
 
 **Gach duine**
-- Lead around agus rince sa bhaile
+- Siúil timpeall
+- Rince sa bhaile
 
 **Barranna**
-- Mná ag trasnú; fir ag tóraíocht le casadh
-- Sleamhnú agus house abhaile
-- Mná trasnú, fir trasnú agus cas
-
-**Taobhanna**
-- Athdhéan
+- Mná trasna chuig an bhfear eile agus rince leis
+- (fearbh) Lean na mná
+- Casadh amháin lámh dheas, dhá chasadh lámh chlé (críochnú ag féachaint isteach sa seit)
+- Chun tosaigh agus cúlaigh faoi dhó
+- Bhálsa leath slí
+- Bhálsa thar n-ais abhaile  
+- Déan x2
 
 **Gach duine**
-- Rince sa bhaile, house around
+- Rince sa bhaile
+
+**Taobhanna**
+- Mná trasna chuig an bhfear eile agus rince leis
+- (fearbh) Lean na mná
+- Casadh amháin lámh dheas, dhá chasadh lámh chlé
+- Chun tosaigh agus cúlaigh faoi dhó
+- Bhálsa leath slí
+- Bhálsa thar n-ais abhaile  
+- Déan x2
+
+**Gach duine**
+- Rince sa bhaile
+- Timpeall an tí
 
 ---
 
-**Figiúr 4 – Three and One**
+**Figiúr 4 – Bara rotha**
 *ríleanna – 256 barra*
 
 **Gach duine**
-- Lead around agus rince sa bhaile
-- Ladies chain agus rince sa bhaile
+- Siúil timpeall
+- Rince sa bhaile
 
-**1ú lánúin bharr**
-- House within chun tríúr-agus-duine a chruthú
+**Barranna**
+- Slabhra na mBan
+- Rince sa bhaile
 
-**2ú lánúin bharr**
-- Athdhéan
+**Cúpla 1**
+- Timpeall an tí agus fág an bhean thall (ar nós barra rotha)
+- Cúlaigh, chun tosaigh, cúlaigh agus cas
+- Cúlaigh, chun tosaigh, cúlaigh agus cas
+- Nollaig
+- Slabhra na mBan
+- Rince sa bhaile (gach duine)
+
+**Cúpla 2**
+- Timpeall an tí agus fág an bhean thall (ar nós barra rotha)
+- Cúlaigh, chun tosaigh, cúlaigh agus cas
+- Cúlaigh, chun tosaigh, cúlaigh agus cas
+- Nollaig
+- Slabhra na mBan
+
+**Gach duine**
+- Rince sa bhaile
 
 **Taobhanna**
-- Athdhéan, faoi stiúir na 1ú lánúine
+- Slabhra na mBan
+- Rince sa bhaile
+
+**Cúpla 3**
+- Timpeall an tí agus fág an bhean thall (ar nós barra rotha)
+- Cúlaigh, chun tosaigh, cúlaigh agus cas
+- Cúlaigh, chun tosaigh, cúlaigh agus cas
+- Nollaig
+- Slabhra na mBan
+- Rince sa bhaile
+
+**Cúpla 4**
+- Timpeall an tí agus fág an bhean thall (ar nós barra rotha)
+- Cúlaigh, chun tosaigh, cúlaigh agus cas
+- Cúlaigh, chun tosaigh, cúlaigh agus cas
+- Nollaig
+- Slabhra na mBan
+- Rince sa bhaile
 
 **Gach duine**
-- Rince sa bhaile agus house around
+- Rince sa bhaile
+- Timpeall an tí
 
 ---
 
-**Figiúr 5 – The Gallop**
-*portanna – 160 barra*
+**Figiúr 5 – Cosa in airde**
+*poirt – 160 barra*
+
+*Mná = barranna ar dtús i gcónaí*
 
 **Gach duine**
-- Lead around, luascadh, house around
-
-**Barranna agus Taobhanna**
-- Gallop trasna agus ar ais
-- Ladies chain, ag bogadh go dtí páirtnéirí nua
-- Luascadh agus house around
-- Athdhéan
+- Siúil timpeall
+- Luascadh
+- Timpeall an tí
 
 **Gach duine**
-- Gallop deiridh – mná ag filleadh ar na páirtnéirí bunaidh
+- Cosa in airde
+- Slabhra na mBan chuig an gcéad pháirtí eile (ar nós cruth R)
+- Luascadh
+- Timpeall an tí  
+- Déan arís x3
 
 ---
 
-**Figiúr 6 – Ladies In**
+**Figiúr 6 – Mná isteach**
 *ríleanna – 192 barra*
 
-**Gach duine**
-- Lead around, rince sa bhaile, house around
-
-**Mná**
-- Advance agus retire faoi dhó
-
-**Fir**
-- Réalta ar dheis agus ar chlé
+*DC, CD, DC, CD réalta*
 
 **Gach duine**
-- Rince in áit, house around
-- Athdhéan trí huaire eile
-- House around deiridh
+- Siúil timpeall
+
+**Gach duine**
+- Rince aige baile
+- Timpeall an tí
+- Rince aige baile
+- Mná chun tosaigh agus cúlaigh faoi dhó
+- Fir réalta D agus C agus mná bog ar aghaidh spás amháin lasmuigh  
+  (nuair atá na fearbh ag filleadh)
+- Déan arís agus arís chuig an mbaile (*réalta*)
+
+**Gach duine**
+- Rince sa bhaile
+- Timpeall an tí
+
