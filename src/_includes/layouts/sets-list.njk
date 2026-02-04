@@ -1,59 +1,31 @@
+---
+navClass: navbar-content
+---
 <!DOCTYPE html>
 <html lang="ga">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Na Seit | Cumann Rince Seite</title>
+  <title>{{ title }} | {{ site.title }}</title>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
   <main>
-    <nav class="navbar navbar-content">
-  <div class="nav-left">
-    
-    <a href="/">
-      <img src="/images/logo.png" alt="Cumann Rince Seite" class="logo">
-    </a>
-    
-    <a href="/sets/">Seiteanna</a>
-    <a href="/about/">Fúinn</a>
-  </div>
-</nav>
-
+    {% include "partials/nav.njk" %}
 
     <section class="content-section">
-      <h1>Na Seit</h1>
+      <h1>{{ title }}</h1>
 
       <div class="search-container">
         <input type="text" id="set-search" class="search-input" placeholder="Cuardaigh seit (teideal nó contae)...">
       </div>
 
       <ul class="sets-list" id="sets-list">
-        
-        <li data-title="baile bhuirne" data-county="corcaigh">
-          <a href="/sets/baile-bhuirne/">Baile Bhuirne <span class="set-county">(Corcaigh)</span></a>
+        {% for set in collections.sets %}
+        <li data-title="{{ set.data.title | lower }}" data-county="{{ set.data.county | lower }}">
+          <a href="{{ set.url }}">{{ set.data.title }} <span class="set-county">({{ set.data.county }})</span></a>
         </li>
-        
-        <li data-title="clare lancers" data-county="an clár">
-          <a href="/sets/clare-lancers/">Clare Lancers <span class="set-county">(An Clár)</span></a>
-        </li>
-        
-        <li data-title="caledonian" data-county="an clár">
-          <a href="/sets/caledonian/">Caledonian <span class="set-county">(An Clár)</span></a>
-        </li>
-        
-        <li data-title="connemara" data-county="gaillimh">
-          <a href="/sets/connemara/">Connemara <span class="set-county">(Gaillimh)</span></a>
-        </li>
-        
-        <li data-title="cashel" data-county="tiobraid árann">
-          <a href="/sets/cashel/">Cashel <span class="set-county">(Tiobraid Árann)</span></a>
-        </li>
-        
-        <li data-title="clare plain" data-county="an clár">
-          <a href="/sets/clare-plain/">Clare Plain <span class="set-county">(An Clár)</span></a>
-        </li>
-        
+        {% endfor %}
       </ul>
       <p class="no-results" id="no-results" style="display: none;">Níl aon seit faighte.</p>
     </section>
