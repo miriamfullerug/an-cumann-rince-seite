@@ -23,7 +23,7 @@ navClass: navbar-content
       <ul class="sets-list" id="sets-list">
         {% for set in collections.sets %}
         <li data-title="{{ set.data.title | lower }}" data-county="{{ set.data.county | lower }}">
-          <a href="{{ set.url }}">{{ set.data.title }} <span class="set-county">({{ set.data.county }})</span></a>
+          <a href="{{ set.url | url }}">{{ set.data.title }} <span class="set-county">({{ set.data.county }})</span></a>
         </li>
         {% endfor %}
       </ul>
