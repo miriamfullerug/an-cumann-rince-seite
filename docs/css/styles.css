@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Bungc";
-  src: url("../fonts/bungc.woff2") format("opentype");
+  src: url("/fonts/bungc.woff2") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
@@ -31,7 +31,7 @@ body {
 /* Hero */
 #home-hero {
   min-height: 100vh;
-  background-image: url("../images/hero.png");
+  background-image: url("/images/hero.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
