@@ -2,9 +2,6 @@ const markdownIt = require("markdown-it");
 const fs = require("fs");
 
 module.exports = function (eleventyConfig) {
-  //site is served at: https://miriamfullerug.github.io/an-cumann-rince-seite/
-  eleventyConfig.setPathPrefix("/an-cumann-rince-seite/");
-
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/fonts");
   eleventyConfig.addPassthroughCopy("src/images");
@@ -51,7 +48,10 @@ module.exports = function (eleventyConfig) {
   });
 
   return {
-    pathPrefix: "/an-cumann-rince-seite/",
+    // GitHub Pages project site prefix:
+    // https://miriamfullerug.github.io/an-cumann-rince-seite/
+    pathPrefix: "/an-cumann-rince-seite",
+
     dir: {
       input: "src",
       output: "docs",
@@ -87,9 +87,7 @@ function parseSetContent(content, md) {
       inIntro = false;
       introEnded = true;
 
-      if (currentFigure) {
-        figures.push(currentFigure);
-      }
+      if (currentFigure) figures.push(currentFigure);
 
       currentFigure = {
         number: figureMatch[1],
@@ -104,21 +102,15 @@ function parseSetContent(content, md) {
 
     // Skip --- separators
     if (trimmed === "---") {
-      if (inIntro && intro.length > 0) {
-        introEnded = true;
-      }
+      if (inIntro && intro.length > 0) introEnded = true;
       continue;
     }
 
     // Skip H1 title
-    if (trimmed.startsWith("# ")) {
-      continue;
-    }
+    if (trimmed.startsWith("# ")) continue;
 
     if (!introEnded && inIntro) {
-      if (trimmed.length > 0) {
-        intro.push(line);
-      }
+      if (trimmed.length > 0) intro.push(line);
     } else if (currentFigure) {
       // Check for music info line: *ríleanna – 160 barra*
       const musicMatch = trimmed.match(
@@ -141,11 +133,8 @@ function parseSetContent(content, md) {
     }
   }
 
-  if (currentFigure) {
-    figures.push(currentFigure);
-  }
+  if (currentFigure) figures.push(currentFigure);
 
-  // Process figure content into HTML
   figures = figures.map((fig) => {
     const contentHtml = processContent(fig.content, md);
     return {
@@ -154,14 +143,14 @@ function parseSetContent(content, md) {
       tuneType: fig.tuneType,
       bars: fig.bars,
       video: fig.video,
-      contentHtml: contentHtml,
+      contentHtml,
     };
   });
 
   return {
     intro: intro.join("\n"),
     introHtml: md.render(intro.join("\n")),
-    figures: figures,
+    figures,
   };
 }
 
@@ -169,7 +158,6 @@ function processContent(lines, md) {
   let content = lines.join("\n").trim();
   let html = md.render(content);
 
-  // Add section-label class to strong tags containing key words
   html = html.replace(
     /<strong>([^<]*(?:Barranna|Taobhanna|Gach duine|Fir|Mná)[^<]*)<\/strong>/g,
     '<strong class="section-label">$1</strong>'
