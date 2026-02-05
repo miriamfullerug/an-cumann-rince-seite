@@ -6,8 +6,8 @@
 }
 
 :root {
-  --warm-bg: #d4c4a8;
-  --warm-light: #e8dcc8;
+  --warm-bg: #EDDCA6;
+  --warm-light: #F4EAD0;
   --warm-dark: #b8a888;
   --green-dark: #1a3c34;
   --green-mid: #2d5a4a;
@@ -64,14 +64,14 @@ body {
 }
 
 .navbar a {
-  color: var(--warm-light);
+  color: white;
   text-decoration: none;
   font-size: 1rem;
   letter-spacing: 0.02em;
 }
 
 .navbar a:hover {
-  color: white;
+  color: var(--warm-light);
 }
 
 .hero-title {
@@ -397,5 +397,83 @@ p:first-child .section-label {
   .hero-title {
     bottom: 1.5rem;
     right: 1rem;
+  }
+}
+
+.home-cards {
+  padding: 3rem 1.25rem;
+}
+
+.home-cards-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+/* Base card */
+.home-card {
+  position: relative;
+  height: 260px;
+  border-radius: 22px;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  background-size: cover;      /* fill card, crop if needed */
+  background-position: center; /* crop from centre */
+  background-repeat: no-repeat;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.25);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.home-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.35);
+}
+
+/* Dark overlay for readability */
+.home-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.35)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+}
+
+.home-card h2 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.8rem;
+}
+
+.home-card p {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.95;
+  line-height: 1.4;
+}
+
+/* Background images */
+.home-card-about {
+  background-image: url("../images/fuinn.png");
+}
+
+.home-card-sets {
+  background-image: url("../images/seiteanna.png");
+}
+
+.home-card-add {
+  background-image: url("../images/cuir-leis.png");
+}
+
+/* Desktop layout */
+@media (min-width: 900px) {
+  .home-cards-inner {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
