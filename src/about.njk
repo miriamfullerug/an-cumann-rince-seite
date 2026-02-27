@@ -1,16 +1,72 @@
 ---
-layout: layouts/content.njk
+layout: layouts/fuinn.njk
 title: Fúinn
 permalink: /about/
 ---
 
-Is tionscadal neamhbhrabúis é **Cumann Rince Seite** atá dírithe ar rince seite na hÉireann a chaomhnú, a dhoiciméadú agus a chur chun cinn don lá inniu agus don todhchaí.
+<section class="fuinn-section">
+  <h1 class="fuinn-page-title">Fúinn</h1>
 
-Táimid ag obair chun *baile ar líne* a chruthú don rince seite, áit a mbeidh acmhainní scríofa agus físe ar fáil, agus béim ar leith ar an **nGaeilge**.
+  <div class="sceal-layout">
+    <div class="sceal-photo">
+      <img src="{{ '/images/miriam.JPG' | url }}" alt="Miriam">
+    </div>
+    <div class="fuinn-text">
+      <p>Dia dhaoibh! Is mise Miriam. Thosaigh mé ag rince leis an gCumann Rince Seite i mo chéad bhliain san ollscoil, agus d'athraigh sé mo shaol ar bhealach nár shamhlaigh mé riamh. Roimhe sin, ní raibh sa Ghaeilge ach ábhar scoile dom. Ach laistigh de chúpla mí bhí sí lárnach i mo chuid cairdis, i mo shaol pearsanta, agus thuig mé gur theastaigh uaim í a bheith lárnach i mo shaol gairmiúil freisin.</p>
+      <p>Tá sé déanta againn i nGaillimh cheana féin - pobal beo, fáiltiúil, a úsáideann an rince seit chun an Ghaeilge a chur chun cinn. Anois táimid ag iarraidh an ghluaiseacht sin a scaipeadh ar fud na tíre.</p>
+    </div>
+  </div>
+</section>
 
-Is é an sprioc atá againn ná an rince seite a dhéanamh níos inrochtana do dhaoine in Éirinn agus thar lear, ag gach leibhéal rince, agus an Ghaeilge i gcroílár an ábhair.
+<section class="fuinn-section">
+  <h2 class="fuinn-section-title">An Fhís</h2>
+  <div class="fuinn-text">
+    <p>An fhís atá againn ná pobal náisiúnta rinceoirí seit a chothú ina reáchtáiltear ceardlanna agus céilithe ar fud na tíre, agus ina labhraítear Gaeilge go nádúrtha toisc gurb í teanga an rince í.</p>
+    </div>
+</section>
 
-Is tionscadal pobail é seo, bunaithe ar chomhoibriú le rinceoirí, ceoltóirí agus daoine a bhfuil grá acu don traidisiún rince seite.
+<section class="fuinn-section fuinn-section--cta">
+  <h2 class="fuinn-section-title">Bí Linn</h2>
 
-Tháinig an tionscadal seo chun cinn as an obair agus an taithí a forbraíodh laistigh de chumann Ollscoil na Gaillimhe *An Cumann Rince Seite*, agus tá sé anois á fhorbairt mar thionscadal neamhspleách.
+  <div class="cta-tier">
+    <p class="cta-tier-intro">Má tá suim agat san obair seo agus más mian leat a bheith ar an eolas faoi nuacht, imeachtaí agus forbairtí, cuir d'ainm leis an liosta.</p>
+    <form class="email-signup-form" action="https://formspree.io/f/xaqdkqdk" method="POST">
+      <div class="email-signup-row">
+        <label for="signup-email" class="visually-hidden">Do sheoladh ríomhphoist</label>
+        <input
+          type="email"
+          id="signup-email"
+          name="email"
+          class="form-input"
+          placeholder="Do sheoladh ríomhphoist"
+          required
+        >
+        <button type="submit" class="btn-primary">Tá mé leat</button>
+      </div>
+    </form>
+  </div>
 
+  <div class="cta-tier cta-tier--directors">
+    <h3 class="cta-tier-title">Bí i do stiúrthóir</h3>
+    <p class="cta-tier-intro">Táimid ag bunú Cuideachta faoi Theorainn Ráthaíochta chun maoiniú a fháil agus an fhís seo a bhaint amach. Táimid ag lorg stiúrthóirí a bhfuil grá acu don rince seit agus don Ghaeilge. Má tá suim agat páirt a ghlacadh, scríobh chugainn.</p>
+    <form class="director-form" action="https://formspree.io/f/mqedjedo" method="POST">
+      <div class="form-group">
+        <label for="dir-name" class="form-label">Ainm</label>
+        <input type="text" id="dir-name" name="name" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <label for="dir-email" class="form-label">Ríomhphost</label>
+        <input type="email" id="dir-email" name="email" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <label for="dir-location" class="form-label">Cá bhfuil tú lonnaithe?</label>
+        <input type="text" id="dir-location" name="location" class="form-input">
+      </div>
+      <div class="form-group">
+        <label for="dir-connection" class="form-label">Fút féin / do theachtaireacht</label>
+        <textarea id="dir-connection" name="connection" class="form-input form-textarea" rows="4" placeholder="Inis dúinn beagán fút féin - do thaithí leis an rince agus leis an teanga, agus cén fáth a dteastaíonn uait bheith páirteach."></textarea>
+      </div>
+      <button type="submit" class="btn-primary">Cuir isteach</button>
+    </form>
+  </div>
+</section>

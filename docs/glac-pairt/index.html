@@ -1,9 +1,33 @@
----
-layout: layouts/glac-pairt.njk
-title: Glac Páirt
-permalink: /glac-pairt/
----
+<!DOCTYPE html>
+<html lang="ga">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glac Páirt | Cumann Rince Seite</title>
+  <link rel="stylesheet" href="/an-cumann-rince-seite/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+</head>
+<body>
+  <main>
+    <nav class="navbar navbar-content">
+  <div class="nav-left">
+    
+    <a href="/an-cumann-rince-seite/">
+      <img src="/an-cumann-rince-seite/images/logo.png" alt="Cumann Rince Seite" class="logo">
+    </a>
+    
 
+    <a href="/an-cumann-rince-seite/sets/">Seiteanna</a>
+    <a href="/an-cumann-rince-seite/about/">Fúinn</a>
+    <a href="/an-cumann-rince-seite/glac-pairt/">Glac Páirt</a>
+  </div>
+</nav>
+
+
+
+    <div class="glac-pairt-page">
+      
 <section class="glac-pairt-section">
   <h1 class="fuinn-page-title">Glac Páirt</h1>
   <p class="fuinn-text">Aimsigh rang rince seit Gaeilge i do cheantar féin, nó cuir do rang féin a leis an léarscáil.</p>
@@ -53,7 +77,7 @@ permalink: /glac-pairt/
 
 <!-- Map markers are driven by src/_data/ranganna.json — add new classes there, not here -->
 <script>
-  var ranganna = {{ ranganna | dump | safe }};
+  var ranganna = [{"ainm":"An Cumann Rince Seite","suiomh":"Ollscoil na Gaillimhe, Gaillimh","lat":53.2784,"lng":-9.0583,"cur_sios":"Rang rince seit do mhic léinn Ollscoil na Gaillimhe.","la":"Dé Luain","am":"7:00in - 9:00in","teagmhail":"mailto:rinceseite@socs.universityofgalway.ie","suiomh_greasain":"https://www.instagram.com/cumannrinceseite"}];
 
   document.addEventListener('DOMContentLoaded', function() {
     var map = L.map('rang-map').setView([53.5, -8.0], 6);
@@ -86,3 +110,9 @@ permalink: /glac-pairt/
     });
   });
 </script>
+
+    </div>
+  </main>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+</body>
+</html>

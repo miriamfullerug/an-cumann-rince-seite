@@ -9,17 +9,15 @@ navClass: navbar-content
   <title>{{ title }} | {{ site.title }}</title>
   <link rel="stylesheet" href="{{ '/css/styles.css' | url }}">
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 </head>
 <body>
   <main>
     {% include "partials/nav.njk" %}
-
-    <section class="content-section">
-      <h1>{{ title }}</h1>
-      <div class="content-text">
-        {{ content | markdown | safe }}
-      </div>
-    </section>
+    <div class="glac-pairt-page">
+      {{ content | safe }}
+    </div>
   </main>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 </body>
 </html>

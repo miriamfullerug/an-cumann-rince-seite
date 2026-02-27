@@ -22,10 +22,14 @@
 }
 
 body {
-  font-family: "Bungc", Georgia, serif;
+  font-family: 'Lora', Georgia, serif;
   background-color: var(--warm-bg);
   color: var(--text);
   line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: "Bungc", Georgia, serif;
 }
 
 /* Hero */
@@ -66,6 +70,7 @@ body {
 .navbar a {
   color: white;
   text-decoration: none;
+  font-family: "Bungc", Georgia, serif;
   font-size: 1rem;
   letter-spacing: 0.02em;
 }
@@ -80,6 +85,7 @@ body {
   right: 2rem;
   color: white;
   text-align: right;
+  font-family: "Bungc", Georgia, serif;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
@@ -122,7 +128,7 @@ body {
   width: 100%;
   max-width: 700px;
   padding: 0.625rem 1rem;
-  font-family: "Bungc", Georgia, serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: 1rem;
   border: 2px solid var(--green-dark);
   background-color: var(--warm-light);
@@ -152,6 +158,7 @@ body {
   background-color: var(--warm-light);
   color: var(--green-dark);
   text-decoration: none;
+  font-family: "Bungc", Georgia, serif;
   font-size: 1.1rem;
   border-left: 4px solid var(--green-dark);
   transition: all 0.2s ease;
@@ -475,5 +482,299 @@ p:first-child .section-label {
 @media (min-width: 900px) {
   .home-cards-inner {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =====================
+   Fúinn + Glac Páirt pages
+   ===================== */
+
+.fuinn-page,
+.glac-pairt-page {
+  min-height: 100vh;
+}
+
+.fuinn-page-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--green-dark);
+  margin-bottom: 1.75rem;
+}
+
+.fuinn-section {
+  padding: 3rem 1.5rem 2.5rem;
+  max-width: 760px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--warm-dark);
+}
+
+.fuinn-section:last-child {
+  border-bottom: none;
+}
+
+.fuinn-section-title {
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--green-dark);
+  margin-bottom: 1.25rem;
+}
+
+/* An Scéal photo layout */
+.sceal-layout {
+  overflow: hidden;
+}
+
+.sceal-photo {
+  float: left;
+  margin: 0 1.75rem 1rem 0;
+  shape-outside: circle(50%);
+}
+
+.sceal-photo img {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 3px solid var(--green-dark);
+  display: block;
+}
+
+.fuinn-text {
+  line-height: 1.75;
+  font-size: 1.05rem;
+}
+
+.fuinn-text p {
+  margin-bottom: 1rem;
+}
+
+.fuinn-text p:last-child {
+  margin-bottom: 0;
+}
+
+.fuinn-text ul {
+  margin: 0.75rem 0 1rem 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.fuinn-text ul li {
+  padding: 0.25rem 0 0.25rem 1.5rem;
+  position: relative;
+}
+
+.fuinn-text ul li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--green-mid);
+  font-weight: bold;
+}
+
+/* Bí Linn CTA section */
+.fuinn-section--cta {
+  max-width: 760px;
+}
+
+.cta-tier {
+  background-color: var(--warm-light);
+  border-left: 4px solid var(--green-mid);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-tier--directors {
+  background-color: var(--green-dark);
+  border-left: 4px solid var(--warm-dark);
+  color: var(--warm-light);
+}
+
+.cta-tier-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.75rem;
+  color: var(--warm-light);
+}
+
+.cta-tier-intro {
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  font-size: 0.975rem;
+}
+
+.cta-tier--directors .cta-tier-intro {
+  color: var(--warm-light);
+  opacity: 0.9;
+}
+
+/* Email signup */
+.email-signup-form {
+  margin-top: 0.5rem;
+}
+
+.email-signup-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.email-signup-row .form-input {
+  flex: 1 1 240px;
+}
+
+/* Shared form elements */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  letter-spacing: 0.03em;
+  color: var(--green-dark);
+  margin-bottom: 0.375rem;
+}
+
+.cta-tier--directors .form-label {
+  color: var(--warm-light);
+  opacity: 0.85;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.625rem 1rem;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1rem;
+  border: 2px solid var(--green-dark);
+  background-color: var(--warm-light);
+  color: var(--text);
+  border-radius: 0;
+}
+
+.form-input:focus {
+  outline: none;
+  background-color: white;
+  border-color: var(--green-mid);
+}
+
+.cta-tier--directors .form-input {
+  background-color: rgba(255,255,255,0.08);
+  border-color: var(--warm-dark);
+  color: var(--warm-light);
+}
+
+.cta-tier--directors .form-input::placeholder {
+  color: var(--warm-dark);
+}
+
+.cta-tier--directors .form-input:focus {
+  background-color: rgba(255,255,255,0.14);
+  border-color: var(--warm-light);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.625rem 1.5rem;
+  background-color: var(--green-dark);
+  color: var(--warm-light);
+  font-family: "Bungc", Georgia, serif;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  border: none;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--green-mid);
+}
+
+.cta-tier--directors .btn-primary {
+  background-color: var(--warm-dark);
+  color: var(--green-dark);
+}
+
+.cta-tier--directors .btn-primary:hover {
+  background-color: var(--warm-light);
+}
+
+/* Visually hidden (accessibility) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Glac Páirt page */
+.glac-pairt-section {
+  padding: 3rem 1.5rem 2.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--warm-dark);
+}
+
+.glac-pairt-section:last-child {
+  border-bottom: none;
+}
+
+#rang-map {
+  height: 450px;
+  border: 2px solid var(--green-dark);
+  margin-bottom: 0.5rem;
+}
+
+/* Leaflet marker override */
+.rang-map-pin {
+  width: 16px;
+  height: 16px;
+  background-color: var(--green-dark);
+  border: 2px solid var(--warm-light);
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+.rang-form {
+  max-width: 640px;
+}
+
+/* Responsive: Fúinn / Glac Páirt */
+@media (max-width: 600px) {
+  .fuinn-section,
+  .glac-pairt-section {
+    padding: 2rem 1rem 2rem;
+  }
+
+  .email-signup-row {
+    flex-direction: column;
+  }
+
+  .email-signup-row .form-input {
+    flex: none;
+    width: 100%;
+  }
+
+  #rang-map {
+    height: 320px;
+  }
+
+  .sceal-photo {
+    float: none;
+    margin: 0 0 1.25rem 0;
+    shape-outside: none;
   }
 }
