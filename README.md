@@ -23,6 +23,16 @@ npm run build
 
 This generates the static site in the `docs/` directory.
 
+### Base URL (seit.ie vs GitHub Pages)
+
+The live site is served at the domain root (e.g. [seit.ie](https://seit.ie/)). The default build uses **no path prefix**, so asset and page URLs resolve to `/css/...`, `/sets/...`, etc.
+
+To build for a GitHub Pages **project** site (under a subpath such as `/an-cumann-rince-seite/`), set the prefix when building:
+
+```bash
+ELEVENTY_PATH_PREFIX=/an-cumann-rince-seite npm run build
+```
+
 ## Adding New Sets
 
 To add a new set dance to the site:

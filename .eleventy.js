@@ -48,9 +48,9 @@ module.exports = function (eleventyConfig) {
   });
 
   return {
-    // GitHub Pages project site prefix:
-    // https://miriamfullerug.github.io/an-cumann-rince-seite/
-    pathPrefix: "/an-cumann-rince-seite",
+    // Root host (e.g. https://seit.ie/). For GitHub Pages project sites, build with:
+    // ELEVENTY_PATH_PREFIX=/an-cumann-rince-seite npm run build
+    pathPrefix: process.env.ELEVENTY_PATH_PREFIX || "",
 
     dir: {
       input: "src",

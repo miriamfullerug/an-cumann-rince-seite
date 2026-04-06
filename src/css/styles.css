@@ -474,14 +474,10 @@ p:first-child .section-label {
   background-image: url("../images/seiteanna.png");
 }
 
-.home-card-add {
-  background-image: url("../images/cuir-leis.png");
-}
-
 /* Desktop layout */
 @media (min-width: 900px) {
   .home-cards-inner {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
