@@ -1,5 +1,5 @@
 ---
-title: "Connemara"
+title: "Conamara"
 county: "Gaillimh"
 featured: true
 ---
