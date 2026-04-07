@@ -1,6 +1,7 @@
 ---
 title: "Bharrlom"
 county: "Corcaigh"
+featured: true
 ---
 
 **Figiúr 1 – Slabhra na mBan**

@@ -1,6 +1,7 @@
 ---
 title: "Chiarraí Thiar"
 county: "Ciarraí"
+featured: true
 ---
 
 *Timpeall an tí speisialta sa seit seo:*  

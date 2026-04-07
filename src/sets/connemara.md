@@ -1,6 +1,7 @@
 ---
 title: "Connemara"
 county: "Gaillimh"
+featured: true
 ---
 
 **Figiúr 1 – Slabhra na mBan**

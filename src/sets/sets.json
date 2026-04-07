@@ -1,4 +1,5 @@
 {
   "layout": "layouts/set.njk",
-  "tags": "sets"
+  "tags": "sets",
+  "permalink": "/seiteanna/{{ page.fileSlug }}/"
 }

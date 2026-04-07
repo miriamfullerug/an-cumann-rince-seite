@@ -2,6 +2,7 @@
 title: "Baile Bhuirne"
 county: "Corcaigh"
 totalBars: 544
+featured: true
 ---
 
 Déantar gach figiúr díreach i ndiaidh a chéile, gan sos eatarthu.

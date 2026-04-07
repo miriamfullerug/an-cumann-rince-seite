@@ -1,22 +1,33 @@
----
-navClass: navbar-content
----
 <!DOCTYPE html>
 <html lang="ga">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ title }} | {{ site.title }}</title>
-  <link rel="stylesheet" href="{{ '/css/styles.css' | url }}">
+  <title>Na Seiteanna | Seit.ie</title>
+  <link rel="stylesheet" href="/css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
   <main>
-    {% include "partials/nav.njk" %}
+    <nav class="navbar navbar-content">
+  <div class="nav-left">
+    
+    <a href="/">
+      <img src="/images/logo.png" alt="Seit.ie" class="logo">
+    </a>
+    
+
+    <a href="/seiteanna/">Seiteanna</a>
+    <a href="/fuinn/">Fúinn</a>
+  </div>
+</nav>
+
+
+
 
     <section class="sets-page">
       <header class="sets-page-header">
-        <h1 class="sets-page-title">{{ title }}</h1>
+        <h1 class="sets-page-title">Na Seiteanna</h1>
         <p class="sets-page-intro">Cuardaigh le teideal nó contae, nó cliceáil ar mharcóir ar an léarscáil.</p>
 
         <div class="sets-search">
@@ -37,33 +48,109 @@ navClass: navbar-content
           </div>
 
           <ul class="sets-results-list" id="sets-list">
-            {% for set in collections.sets %}
+            
             <li class="sets-result"
-                data-title="{{ set.data.title | lower }}"
-                data-county="{{ set.data.county | lower }}"
-                data-url="{{ set.url | url }}"
-                data-display-title="{{ set.data.title }}"
-                data-display-county="{{ set.data.county }}"
-                data-featured="{% if set.data.featured %}true{% else %}false{% endif %}">
-              <a class="sets-result-link" href="{{ set.url | url }}">
-                <span class="sets-result-title">{{ set.data.title }}</span>
+                data-title="baile bhuirne"
+                data-county="corcaigh"
+                data-url="/seiteanna/baile-bhuirne/"
+                data-display-title="Baile Bhuirne"
+                data-display-county="Corcaigh"
+                data-featured="true">
+              <a class="sets-result-link" href="/seiteanna/baile-bhuirne/">
+                <span class="sets-result-title">Baile Bhuirne</span>
               </a>
             </li>
-            {% endfor %}
+            
+            <li class="sets-result"
+                data-title="chiarraí thiar"
+                data-county="ciarraí"
+                data-url="/seiteanna/caledonian/"
+                data-display-title="Chiarraí Thiar"
+                data-display-county="Ciarraí"
+                data-featured="true">
+              <a class="sets-result-link" href="/seiteanna/caledonian/">
+                <span class="sets-result-title">Chiarraí Thiar</span>
+              </a>
+            </li>
+            
+            <li class="sets-result"
+                data-title="bharrlom"
+                data-county="corcaigh"
+                data-url="/seiteanna/cashel/"
+                data-display-title="Bharrlom"
+                data-display-county="Corcaigh"
+                data-featured="true">
+              <a class="sets-result-link" href="/seiteanna/cashel/">
+                <span class="sets-result-title">Bharrlom</span>
+              </a>
+            </li>
+            
+            <li class="sets-result"
+                data-title="lansaithe an chláir"
+                data-county="an clár"
+                data-url="/seiteanna/clare-lancers/"
+                data-display-title="Lansaithe an Chláir"
+                data-display-county="An Clár"
+                data-featured="true">
+              <a class="sets-result-link" href="/seiteanna/clare-lancers/">
+                <span class="sets-result-title">Lansaithe an Chláir</span>
+              </a>
+            </li>
+            
+            <li class="sets-result"
+                data-title="pléineáilte an chláir"
+                data-county="an clár"
+                data-url="/seiteanna/clare-plain/"
+                data-display-title="Pléineáilte an Chláir"
+                data-display-county="An Clár"
+                data-featured="true">
+              <a class="sets-result-link" href="/seiteanna/clare-plain/">
+                <span class="sets-result-title">Pléineáilte an Chláir</span>
+              </a>
+            </li>
+            
+            <li class="sets-result"
+                data-title="connemara"
+                data-county="gaillimh"
+                data-url="/seiteanna/connemara/"
+                data-display-title="Connemara"
+                data-display-county="Gaillimh"
+                data-featured="true">
+              <a class="sets-result-link" href="/seiteanna/connemara/">
+                <span class="sets-result-title">Connemara</span>
+              </a>
+            </li>
+            
           </ul>
 
           <p class="sets-empty" id="no-results" style="display: none;">Níl aon seit faighte.</p>
 
           <div class="sets-page-actions">
-            <a class="sets-browse-all" href="{{ '/seiteanna/uile/' | url }}">Brabhsáil na seiteanna uile</a>
+            <a class="sets-browse-all" href="/seiteanna/uile/">Brabhsáil na seiteanna uile</a>
           </div>
         </section>
       </div>
     </section>
     
-    {% include "partials/footer.njk" %}
+    <footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-brand">
+      <span class="site-footer-title">Seit.ie</span>
+    </div>
 
-    <script src="{{ '/js/vendor/d3.min.js' | url }}"></script>
+    <nav class="site-footer-nav" aria-label="Naisc sa bhuntásc">
+      <a href="/seiteanna/">Seiteanna</a>
+      <a href="/fuinn/">Fúinn</a>
+    </nav>
+
+    <div class="site-footer-contact">
+      <a href="mailto:miriamteresafuller@gmail.com">miriamteresafuller@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="/js/vendor/d3.min.js"></script>
     <script>
       (function() {
         const searchInput = document.getElementById('set-search');
@@ -90,7 +177,7 @@ navClass: navbar-content
         (function initSetsMap() {
           if (!mapRootEl || !window.d3) return;
 
-          const counties = {{ counties | dump | safe }};
+          const counties = {"Aontroim":{"lat":54.7196,"lng":-6.2073},"Ard Mhacha":{"lat":54.3499,"lng":-6.6546},"An Dún":{"lat":54.4095,"lng":-5.8898},"Doire":{"lat":54.9966,"lng":-7.3086},"Fear Manach":{"lat":54.3435,"lng":-7.631},"Tír Eoghain":{"lat":54.594,"lng":-7.309},"Port an Dúnáin":{"lat":54.4047,"lng":-7.6523},"An Cabhán":{"lat":53.991,"lng":-7.36},"Ceatharlach":{"lat":52.8365,"lng":-6.9341},"An Clár":{"lat":52.9045,"lng":-8.98},"Corcaigh":{"lat":51.8979,"lng":-8.4706},"Dún na nGall":{"lat":54.6538,"lng":-8.1096},"Baile Átha Cliath":{"lat":53.3498,"lng":-6.2603},"Gaillimh":{"lat":53.2707,"lng":-9.0568},"Ciarraí":{"lat":52.1545,"lng":-9.5669},"Cill Dara":{"lat":53.1589,"lng":-6.9096},"Cill Chainnigh":{"lat":52.6541,"lng":-7.252},"Laois":{"lat":52.9943,"lng":-7.3323},"Liatroim":{"lat":54.1253,"lng":-8},"Luimneach":{"lat":52.6639,"lng":-8.6267},"Lú":{"lat":53.999,"lng":-6.405},"Maigh Eo":{"lat":53.8,"lng":-9.5167},"An Mhí":{"lat":53.605,"lng":-6.6564},"Muineachán":{"lat":54.2492,"lng":-6.9683},"Uíbh Fhailí":{"lat":53.235,"lng":-7.7122},"Ros Comáin":{"lat":53.627,"lng":-8.189},"Sligeach":{"lat":54.2766,"lng":-8.4761},"Tiobraid Árann":{"lat":52.4738,"lng":-7.7931},"Port Láirge":{"lat":52.2593,"lng":-7.1101},"An Iarmhí":{"lat":53.5333,"lng":-7.35},"Loch Garman":{"lat":52.5,"lng":-6.5667}};
 
           // Minimal TopoJSON helpers (avoid extra dependency).
           function topoTransformPoint(transform, point) {
@@ -305,7 +392,7 @@ navClass: navbar-content
           // Expose API for the search filter to call.
           window.__setsMap = { updateMarkers };
 
-          fetch({{ ('/data/ireland-counties.topojson' | url) | dump | safe }})
+          fetch("/data/ireland-counties.topojson")
             .then((r) => r.json())
             .then((topology) => {
               renderBase(topology);

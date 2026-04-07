@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ga">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Na Seiteanna Uile | Seit.ie</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <nav class="navbar navbar-content">
+  <div class="nav-left">
+    
+    <a href="/">
+      <img src="/images/logo.png" alt="Seit.ie" class="logo">
+    </a>
+    
+
+    <a href="/seiteanna/">Seiteanna</a>
+    <a href="/fuinn/">Fúinn</a>
+  </div>
+</nav>
+
+
+
+
+    <section class="browse-page">
+      <header class="sets-page-header">
+        <h1 class="sets-page-title">Na Seiteanna Uile</h1>
+        <p class="sets-page-intro">Cuardaigh agus brabhsáil A–Z.</p>
+
+        <div class="sets-search">
+          <label for="browse-search" class="visually-hidden">Cuardaigh</label>
+          <input type="text" id="browse-search" class="sets-search-input" placeholder="Cuardaigh seit (teideal nó contae)...">
+        </div>
+      </header>
+
+      <div class="sets-results-meta">
+        <span id="browse-count" class="sets-count"></span>
+      </div>
+
+      <ul class="sets-results-list browse-results-list" id="browse-list">
+        
+        <li class="sets-result browse-item"
+            data-title="baile bhuirne"
+            data-county="corcaigh">
+          <a class="sets-result-link" href="/seiteanna/baile-bhuirne/">
+            <span class="sets-result-title">Baile Bhuirne</span>
+          </a>
+        </li>
+        
+        <li class="sets-result browse-item"
+            data-title="bharrlom"
+            data-county="corcaigh">
+          <a class="sets-result-link" href="/seiteanna/cashel/">
+            <span class="sets-result-title">Bharrlom</span>
+          </a>
+        </li>
+        
+        <li class="sets-result browse-item"
+            data-title="chiarraí thiar"
+            data-county="ciarraí">
+          <a class="sets-result-link" href="/seiteanna/caledonian/">
+            <span class="sets-result-title">Chiarraí Thiar</span>
+          </a>
+        </li>
+        
+        <li class="sets-result browse-item"
+            data-title="connemara"
+            data-county="gaillimh">
+          <a class="sets-result-link" href="/seiteanna/connemara/">
+            <span class="sets-result-title">Connemara</span>
+          </a>
+        </li>
+        
+        <li class="sets-result browse-item"
+            data-title="lansaithe an chláir"
+            data-county="an clár">
+          <a class="sets-result-link" href="/seiteanna/clare-lancers/">
+            <span class="sets-result-title">Lansaithe an Chláir</span>
+          </a>
+        </li>
+        
+        <li class="sets-result browse-item"
+            data-title="pléineáilte an chláir"
+            data-county="an clár">
+          <a class="sets-result-link" href="/seiteanna/clare-plain/">
+            <span class="sets-result-title">Pléineáilte an Chláir</span>
+          </a>
+        </li>
+        
+      </ul>
+
+      <p class="sets-empty" id="browse-empty" style="display:none;">Níl aon seit faighte.</p>
+    </section>
+
+    <footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-brand">
+      <span class="site-footer-title">Seit.ie</span>
+    </div>
+
+    <nav class="site-footer-nav" aria-label="Naisc sa bhuntásc">
+      <a href="/seiteanna/">Seiteanna</a>
+      <a href="/fuinn/">Fúinn</a>
+    </nav>
+
+    <div class="site-footer-contact">
+      <a href="mailto:miriamteresafuller@gmail.com">miriamteresafuller@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+
+    <script>
+      (function() {
+        const input = document.getElementById('browse-search');
+        const list = document.getElementById('browse-list');
+        const items = Array.from(list.querySelectorAll('li'));
+        const countEl = document.getElementById('browse-count');
+        const emptyEl = document.getElementById('browse-empty');
+
+        function filter() {
+          const q = input.value.toLowerCase().trim();
+          let n = 0;
+          items.forEach((item) => {
+            const t = item.getAttribute('data-title') || '';
+            const c = item.getAttribute('data-county') || '';
+            const ok = !q || t.includes(q) || c.includes(q);
+            item.style.display = ok ? '' : 'none';
+            if (ok) n++;
+          });
+          countEl.textContent = n + ' seiteanna';
+          emptyEl.style.display = n === 0 && q ? 'block' : 'none';
+        }
+
+        input.addEventListener('input', filter);
+        filter();
+      })();
+    </script>
+  </main>
+</body>
+</html>
