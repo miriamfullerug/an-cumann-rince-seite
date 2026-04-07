@@ -1,0 +1,77 @@
+---
+navClass: navbar-content
+---
+<!DOCTYPE html>
+<html lang="ga">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} | {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/css/styles.css' | url }}">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main>
+    {% include "partials/nav.njk" %}
+
+    <section class="browse-page">
+      <header class="sets-page-header">
+        <h1 class="sets-page-title">{{ title }}</h1>
+        <p class="sets-page-intro">Cuardaigh agus brabhsáil A–Z.</p>
+
+        <div class="sets-search">
+          <label for="browse-search" class="visually-hidden">Cuardaigh</label>
+          <input type="text" id="browse-search" class="sets-search-input" placeholder="Cuardaigh seit (teideal nó contae)...">
+        </div>
+      </header>
+
+      <div class="sets-results-meta">
+        <span id="browse-count" class="sets-count"></span>
+      </div>
+
+      <ul class="sets-results-list browse-results-list" id="browse-list">
+        {% for set in collections.sets | sort(attribute='data.title') %}
+        <li class="sets-result browse-item"
+            data-title="{{ set.data.title | lower }}"
+            data-county="{{ set.data.county | lower }}">
+          <a class="sets-result-link" href="{{ set.url | url }}">
+            <span class="sets-result-title">{{ set.data.title }}</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+
+      <p class="sets-empty" id="browse-empty" style="display:none;">Níl aon seit faighte.</p>
+    </section>
+
+    {% include "partials/footer.njk" %}
+
+    <script>
+      (function() {
+        const input = document.getElementById('browse-search');
+        const list = document.getElementById('browse-list');
+        const items = Array.from(list.querySelectorAll('li'));
+        const countEl = document.getElementById('browse-count');
+        const emptyEl = document.getElementById('browse-empty');
+
+        function filter() {
+          const q = input.value.toLowerCase().trim();
+          let n = 0;
+          items.forEach((item) => {
+            const t = item.getAttribute('data-title') || '';
+            const c = item.getAttribute('data-county') || '';
+            const ok = !q || t.includes(q) || c.includes(q);
+            item.style.display = ok ? '' : 'none';
+            if (ok) n++;
+          });
+          countEl.textContent = n + ' seiteanna';
+          emptyEl.style.display = n === 0 && q ? 'block' : 'none';
+        }
+
+        input.addEventListener('input', filter);
+        filter();
+      })();
+    </script>
+  </main>
+</body>
+</html>

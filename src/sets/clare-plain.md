@@ -1,6 +1,7 @@
 ---
 title: "Pléineáilte an Chláir"
 county: "An Clár"
+featured: true
 ---
 
 **Figiúr 1 – Siúil tríd**

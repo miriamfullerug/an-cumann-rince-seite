@@ -16,27 +16,240 @@
       </div>
     </section>
 
-    <section class="home-cards">
-  <div class="home-cards-inner">
-
-    <a class="home-card home-card-about" href="{{ '/about/' | url }}">
-      <div class="home-card-overlay">
-        <h2>Fúinn</h2>
-        <p>Ár scéal, ár bhfís, agus conas a bheith linn.</p>
+    <section class="home-map-section" aria-label="Léarscáil na seit">
+      <div class="home-map-inner">
+        <div id="ireland-map" class="ireland-map" role="img" aria-label="Léarscáil d'Éirinn le seiteanna"></div>
+        <noscript>
+          <p class="home-map-noscript">Chun an léarscáil a fheiceáil, caithfidh JavaScript a bheith cumasaithe agat.</p>
+        </noscript>
       </div>
-    </a>
+    </section>
 
-    <a class="home-card home-card-sets" href="{{ '/sets/' | url }}">
-      <div class="home-card-overlay">
-        <h2>Seiteanna</h2>
-        <p>Treoracha, nótaí, & físeáin do gach seit.</p>
-      </div>
-    </a>
-
-  </div>
-</section>
-
-
+    {% include "partials/footer.njk" %}
   </main>
+  <script src="{{ '/js/vendor/d3.min.js' | url }}"></script>
+  <script>
+    (function() {
+      // Minimal TopoJSON helpers (avoid extra dependency).
+      function topoTransformPoint(transform, point) {
+        if (!transform) return point;
+        const scale = transform.scale || [1, 1];
+        const translate = transform.translate || [0, 0];
+        return [
+          point[0] * scale[0] + translate[0],
+          point[1] * scale[1] + translate[1]
+        ];
+      }
+
+      function topoArcsToCoordinates(arcs, topology) {
+        const { arcs: topoArcs, transform } = topology;
+        let x = 0, y = 0;
+        const coords = [];
+        for (const arcIndexRaw of arcs) {
+          const arcIndex = arcIndexRaw < 0 ? ~arcIndexRaw : arcIndexRaw;
+          const arc = topoArcs[arcIndex];
+          const points = [];
+          x = 0; y = 0;
+          for (const [dx, dy] of arc) {
+            x += dx; y += dy;
+            points.push(topoTransformPoint(transform, [x, y]));
+          }
+          if (arcIndexRaw < 0) points.reverse();
+          if (coords.length) points.shift(); // stitch
+          coords.push(...points);
+        }
+        return coords;
+      }
+
+      function topoObjectToGeoJSON(topology, objectName) {
+        const obj = topology.objects[objectName];
+        if (!obj) throw new Error('Missing TopoJSON object: ' + objectName);
+
+        if (obj.type === 'GeometryCollection') {
+          return {
+            type: 'FeatureCollection',
+            features: obj.geometries.map((g) => ({
+              type: 'Feature',
+              properties: g.properties || {},
+              geometry: topoGeometryToGeometry(topology, g)
+            }))
+          };
+        }
+
+        return {
+          type: 'FeatureCollection',
+          features: [{
+            type: 'Feature',
+            properties: obj.properties || {},
+            geometry: topoGeometryToGeometry(topology, obj)
+          }]
+        };
+      }
+
+      function topoGeometryToGeometry(topology, geom) {
+        if (geom.type === 'Polygon') {
+          return {
+            type: 'Polygon',
+            coordinates: geom.arcs.map((ring) => [ ...topoArcsToCoordinates(ring, topology) ])
+          };
+        }
+        if (geom.type === 'MultiPolygon') {
+          return {
+            type: 'MultiPolygon',
+            coordinates: geom.arcs.map((poly) =>
+              poly.map((ring) => [ ...topoArcsToCoordinates(ring, topology) ])
+            )
+          };
+        }
+        // Fallback: not expected for this dataset
+        return { type: geom.type, coordinates: [] };
+      }
+
+      const sets = [
+        {% for setItem in collections.sets %}
+        {
+          title: {{ setItem.data.title | dump | safe }},
+          county: {{ setItem.data.county | dump | safe }},
+          url: {{ (setItem.url | url) | dump | safe }}
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ];
+      const counties = {{ counties | dump | safe }};
+
+      const rootEl = document.getElementById('ireland-map');
+      if (!rootEl || !sets || !sets.length || !window.d3) return;
+
+      // Group by county for deterministic jitter.
+      const byCounty = new Map();
+      sets
+        .slice()
+        .sort((a, b) => (a.title || '').localeCompare(b.title || '', 'ga'))
+        .forEach((s) => {
+          const c = (s.county || '').trim();
+          if (!byCounty.has(c)) byCounty.set(c, []);
+          byCounty.get(c).push(s);
+        });
+
+      function jitterLatLng(baseLat, baseLng, index, total) {
+        if (total <= 1) return [baseLat, baseLng];
+
+        // Spread markers around a small circle (in km) so they don't overlap.
+        const radiusKm = 10;
+        const angle = (2 * Math.PI * index) / total;
+        const dLat = (radiusKm / 111) * Math.sin(angle);
+        const dLng = (radiusKm / (111 * Math.cos((baseLat * Math.PI) / 180))) * Math.cos(angle);
+        return [baseLat + dLat, baseLng + dLng];
+      }
+
+      // Build marker points (lat/lng) from county centroids.
+      const markerPoints = [];
+      for (const [countyName, countySets] of byCounty.entries()) {
+        const centroid = counties[countyName];
+        if (!centroid) {
+          console.warn('[seit.ie] Missing county centroid for:', countyName);
+          continue;
+        }
+        countySets.forEach((s, i) => {
+          const [lat, lng] = jitterLatLng(centroid.lat, centroid.lng, i, countySets.length);
+          markerPoints.push({ title: s.title, county: countyName, url: s.url, lat, lng });
+        });
+      }
+
+      function render(topology) {
+        // Try a few common object keys for this dataset.
+        const objectKey = topology.objects.counties
+          ? 'counties'
+          : topology.objects.irish_counties
+          ? 'irish_counties'
+          : Object.keys(topology.objects)[0];
+
+        const geo = topoObjectToGeoJSON(topology, objectKey);
+
+        // Responsive SVG sizing
+        const width = rootEl.clientWidth || 900;
+        const height = Math.max(360, Math.round(width * 0.95));
+
+        rootEl.innerHTML = '';
+        // Tooltip layer (HTML) for instant, consistent hover labels.
+        rootEl.style.position = 'relative';
+        const tooltip = document.createElement('div');
+        tooltip.className = 'ireland-map-tooltip';
+        tooltip.setAttribute('role', 'status');
+        tooltip.setAttribute('aria-live', 'polite');
+        tooltip.style.display = 'none';
+        rootEl.appendChild(tooltip);
+
+        const svg = d3
+          .select(rootEl)
+          .append('svg')
+          .attr('class', 'ireland-map-svg')
+          .attr('viewBox', `0 0 ${width} ${height}`)
+          .attr('preserveAspectRatio', 'xMidYMid meet');
+
+        const projection = d3.geoMercator();
+        const path = d3.geoPath(projection);
+
+        projection.fitSize([width, height], geo);
+
+        // County outlines (decorative)
+        svg
+          .append('g')
+          .attr('class', 'ireland-counties')
+          .selectAll('path')
+          .data(geo.features)
+          .join('path')
+          .attr('d', path)
+          .attr('class', 'ireland-county');
+
+        // Markers
+        const markersG = svg.append('g').attr('class', 'ireland-set-markers');
+
+        const markerSelection = markersG
+          .selectAll('a')
+          .data(markerPoints)
+          .join('a')
+          .attr('xlink:href', (d) => d.url)
+          .attr('href', (d) => d.url)
+          .on('click', function(event, d) {
+            event.preventDefault();
+            window.location.href = d.url;
+          })
+          .append('circle')
+          .attr('class', 'ireland-set-marker')
+          .attr('r', 5.5)
+          .attr('cx', (d) => projection([d.lng, d.lat])[0])
+          .attr('cy', (d) => projection([d.lng, d.lat])[1]);
+
+        function showTooltip(event, d) {
+          tooltip.textContent = d.title;
+          tooltip.style.display = 'block';
+          moveTooltip(event);
+        }
+
+        function moveTooltip(event) {
+          const bounds = rootEl.getBoundingClientRect();
+          const x = event.clientX - bounds.left;
+          const y = event.clientY - bounds.top;
+          tooltip.style.left = (x + 12) + 'px';
+          tooltip.style.top = (y - 10) + 'px';
+        }
+
+        function hideTooltip() {
+          tooltip.style.display = 'none';
+        }
+
+        markerSelection
+          .on('mouseenter', function(event, d) { showTooltip(event, d); })
+          .on('mousemove', function(event) { moveTooltip(event); })
+          .on('mouseleave', function() { hideTooltip(); });
+      }
+
+      // Load Ireland counties TopoJSON (vendored in repo)
+      fetch({{ ('/data/ireland-counties.topojson' | url) | dump | safe }})
+        .then((r) => r.json())
+        .then(render)
+        .catch((e) => console.error('[seit.ie] Failed to load map data:', e));
+    })();
+  </script>
 </body>
 </html>

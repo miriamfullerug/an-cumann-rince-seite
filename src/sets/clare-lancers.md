@@ -1,6 +1,7 @@
 ---
 title: "Lansaithe an Chláir"
 county: "An Clár"
+featured: true
 ---
 
 *Dáltar uimhreacha na gcúplaí mar a dhéanfaí an chrois*  
