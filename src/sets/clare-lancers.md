@@ -1,5 +1,6 @@
 ---
 title: "Lansaithe an Chláir"
+title_seit: "Seit Lansaithe an Chláir"
 county: "An Clár"
 featured: true
 ---

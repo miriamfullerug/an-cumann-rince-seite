@@ -1,5 +1,6 @@
 ---
 title: "Conamara"
+title_seit: "Seit Chonamara"
 county: "Gaillimh"
 featured: true
 ---

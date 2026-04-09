@@ -1,5 +1,6 @@
 ---
 title: "Baile Bhuirne"
+title_seit: "Seit Bhaile Bhuirne"
 county: "Corcaigh"
 totalBars: 544
 featured: true

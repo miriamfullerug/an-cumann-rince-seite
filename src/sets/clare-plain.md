@@ -1,5 +1,6 @@
 ---
 title: "Pléineáilte an Chláir"
+title_seit: "Seit Pléineáilte an Chláir"
 county: "An Clár"
 featured: true
 ---
