@@ -1,5 +1,6 @@
 ---
-title: "Bharrlom"
+title: "Barrlom"
+title_seit: "Seit Bharrlom"
 county: "Corcaigh"
 featured: true
 ---

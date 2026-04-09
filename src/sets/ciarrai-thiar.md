@@ -1,5 +1,6 @@
 ---
-title: "Chiarraí Thiar"
+title: "Ciarraí Thiar"
+title_seit: "Seit Chiarraí Thiar"
 county: "Ciarraí"
 featured: true
 ---

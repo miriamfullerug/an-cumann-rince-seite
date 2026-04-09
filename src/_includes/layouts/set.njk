@@ -6,7 +6,8 @@ navClass: navbar-content
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Seit {{ title }} | {{ site.title }}</title>
+  {% set setTitleSeit = title_seit or ("Seit " + title) %}
+  <title>{{ setTitleSeit }} | {{ site.title }}</title>
   <link rel="stylesheet" href="{{ '/css/styles.css' | url }}">
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 </head>
@@ -15,8 +16,9 @@ navClass: navbar-content
     {% include "partials/nav.njk" %}
 
     <section class="content-section set-page">
+      <a class="back-link" href="{{ '/seiteanna/' | url }}" aria-label="Ar ais">←</a>
       <header class="set-header">
-        <h1>Seit {{ title }}</h1>
+        <h1>{{ setTitleSeit }}</h1>
         <div class="set-meta">
           <span><strong>Contae:</strong> {{ county }}</span>
         </div>
